@@ -304,7 +304,13 @@ class ImageEncryptionApp:
     def browse_input(self):
         self.input_path = filedialog.askopenfilename(
             title="Select Input Image",
-            filetypes=[("Image files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif")]
+            filetypes=[
+                ("PNG files", "*.png"), 
+                ("JPEG files", "*.jpg *.jpeg"), 
+                ("BMP files", "*.bmp"),
+                ("GIF files", "*.gif"),
+                ("All files", "*.*")
+            ]
         )
         
         if self.input_path:
@@ -325,7 +331,12 @@ class ImageEncryptionApp:
     def browse_output(self):
         self.output_path = filedialog.asksaveasfilename(
             title="Save Output Image",
-            filetypes=[("PNG Image", "*.png"), ("JPEG Image", "*.jpg"), ("All Images", "*.png;*.jpg;*.jpeg;*.bmp")],
+            filetypes=[
+                ("PNG files", "*.png"), 
+                ("JPEG files", "*.jpg"), 
+                ("BMP files", "*.bmp"),
+                ("All files", "*.*")
+            ],
             defaultextension=".png"
         )
         
